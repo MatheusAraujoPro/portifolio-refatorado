@@ -1,0 +1,17 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div id="container">
+        <img src="{{data.avatar}}" alt="imagem de {{  data.name   }}">
+        <h1>{{  data.name    }}</h1>
+        <h2>{{ data.subtitle }}</h2>
+        <p> {{  data.about   }}</p>
+    </div>
+
+        <div id="footer-links" class="links"> 
+            {% for link in data.links %}
+                <a href="{{link.url}}">{{link.name}}</a>  
+            {% endfor %}         
+        </div>
+{% endblock %}  
+</html>
