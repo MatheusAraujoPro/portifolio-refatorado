@@ -14,7 +14,8 @@ server.set('view engine', 'njk')
 //configurar o nunjucks
 nunjucks.configure('views', {
     express: server,
-    autoescape: false
+    autoescape: false,
+    noCache: true
 })
 
 //Rotas

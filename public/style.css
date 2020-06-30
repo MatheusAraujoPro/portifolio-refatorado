@@ -103,6 +103,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+    cursor: pointer;
 }
 
 .card {
@@ -111,12 +112,14 @@ body{
 
 .card__img img{
     width: 100%;
+    
 }
+
 
 /*Aplicando em duas classes ao mesmo tempo*/
 .card__content,
 .card__info {
-    padding: 10px;
+    padding: 20px;
 }
 
 .card__info{
@@ -171,4 +174,19 @@ iframe {
     height: 90%;
     position: absolute;
     top: 30px;
+}
+
+/*     featured    */
+.featured__wrapper.card__img{
+    position: relative;
+}
+.featured {    
+    right: 5px;
+    background-color: #dc7f7f;
+    color: #262f1d;
+    border-radius: 6px;
+    padding: 4px;
+    position: absolute;
+    top: 71.4px;
+
 }
