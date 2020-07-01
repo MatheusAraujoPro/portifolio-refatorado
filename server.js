@@ -13,9 +13,9 @@ server.set('view engine', 'njk')
 
 //configurar o nunjucks
 nunjucks.configure('views', {
-    express: server,
-    autoescape: false,
-    noCache: true
+    express: server, //variável do express
+    autoescape: false, //interpolar html com strings
+    noCache: true   //Não guardar cache
 })
 
 //Rotas
@@ -39,6 +39,25 @@ server.get('/projetcs', (req, res) => {
     return res.render('projetcs', {itens: products}) 
 })
 
+server.get('/video', (req, res)=>{
+    //recebendo id da url
+    const id = req.query.id
+
+    const video = products.find((video)=>{
+        if(video.id == id){
+            return true
+        }
+    })
+
+    if(!video){
+        return res.send('Vídeo is not found')
+    }
+
+    // renderizando a página e passando os dados do vídeo
+    return res.render('video', {item: video})
+
+
+})
 //Criando o servidor
 server.listen(8080, () =>{
     console.log('Running') 
